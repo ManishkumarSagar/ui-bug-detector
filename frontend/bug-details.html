@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f97316" />
+  <title>Bug Details | Vision AI</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">V</div>
+      <div>Vision AI <small>VISUAL UI BUG DETECTION</small></div>
+    </div>
+    <div class="top-actions">
+      <a href="index.html" class="btn btn-ghost btn-sm">Dashboard</a>
+      <button class="btn btn-ghost btn-sm" onclick="logout()">Logout</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 style="margin: 0 0 24px; letter-spacing: -1px;">Bug Details</h1>
+    <section class="card" id="bug-card">
+      <p class="empty">Loading…</p>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/bugs.js"></script>
+</body>
+</html>

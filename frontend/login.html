@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f97316" />
+  <title>Login | Vision AI</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">V</div>
+      <div>Vision AI <small>VISUAL UI BUG DETECTION</small></div>
+    </div>
+  </header>
+
+  <main class="auth-wrap">
+    <div class="auth-card">
+      <h1 id="auth-title">Welcome back</h1>
+      <p id="auth-sub">Log in to your Vision AI account.</p>
+
+      <form id="auth-form">
+        <div class="form-group" id="name-group" hidden>
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Your name" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required autocomplete="email" />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required autocomplete="current-password" />
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="auth-submit" style="width: 100%">
+          Log In
+        </button>
+      </form>
+
+      <p style="margin-top: 18px; text-align: center; font-size: 13px;">
+        <span id="toggle-text">New here?</span>
+        <a href="#" id="toggle-mode">Create account</a>
+      </p>
+    </div>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f97316" />
+  <title>Dashboard | Vision AI</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">V</div>
+      <div>Vision AI <small>VISUAL UI BUG DETECTION</small></div>
+    </div>
+    <nav class="top-nav">
+      <a href="index.html" class="nav-link">Dashboard</a>
+      <a href="websites.html" class="nav-link">Websites</a>
+      <a href="scan.html" class="nav-link">Scan</a>
+      <a href="bug-details.html" class="nav-link">Bugs</a>
+    </nav>
+    <div class="top-actions">
+      <a href="scan.html" class="btn btn-primary btn-sm">New Scan</a>
+      <button class="btn btn-ghost btn-sm" onclick="logout()">Logout</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 style="margin: 0 0 6px; letter-spacing: -1px;">Dashboard</h1>
+    <p style="margin: 0 0 24px; color: var(--muted);">
+      Overview of your visual regression scans and open issues.
+    </p>
+
+    <section class="stats">
+      <div class="stat">
+        <div class="stat-label">Websites</div>
+        <div class="stat-value" id="stat-websites">—</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total Scans</div>
+        <div class="stat-value" id="stat-scans">—</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Open Bugs</div>
+        <div class="stat-value orange" id="stat-open">—</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Resolved</div>
+        <div class="stat-value" id="stat-resolved" style="color: var(--green)">—</div>
+      </div>
+    </section>
+
+    <section class="card" style="margin-bottom: 22px;">
+      <h2>Recent Scans</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Website</th>
+              <th>Viewport</th>
+              <th>Status</th>
+              <th>Diff Pixels</th>
+              <th>Date</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="recent-scans">
+            <tr><td colspan="6" class="empty">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Open Issues</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Severity</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="open-bugs">
+            <tr><td colspan="5" class="empty">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

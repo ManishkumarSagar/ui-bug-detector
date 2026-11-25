@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f97316" />
+  <title>Websites | Vision AI</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">V</div>
+      <div>Vision AI <small>VISUAL UI BUG DETECTION</small></div>
+    </div>
+    <div class="top-actions">
+      <a href="index.html" class="btn btn-ghost btn-sm">Dashboard</a>
+      <button class="btn btn-ghost btn-sm" onclick="logout()">Logout</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 style="margin: 0 0 6px; letter-spacing: -1px;">Websites</h1>
+    <p style="margin: 0 0 24px; color: var(--muted);">
+      Register websites to scan for visual regressions.
+    </p>
+
+    <section class="card" style="margin-bottom: 22px;">
+      <h2>Add Website</h2>
+      <form id="website-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="ws-name">Name</label>
+            <input type="text" id="ws-name" required placeholder="Demo Website" />
+          </div>
+          <div class="form-group">
+            <label for="ws-url">URL</label>
+            <input type="url" id="ws-url" required placeholder="https://example.com" />
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Save Website</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Registered Websites</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>URL</th>
+              <th>Added</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="website-list">
+            <tr><td colspan="4" class="empty">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/websites.js"></script>
+</body>
+</html>

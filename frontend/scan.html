@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f97316" />
+  <title>Scan | Vision AI</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">V</div>
+      <div>Vision AI <small>VISUAL UI BUG DETECTION</small></div>
+    </div>
+    <div class="top-actions">
+      <a href="index.html" class="btn btn-ghost btn-sm">Dashboard</a>
+      <button class="btn btn-ghost btn-sm" onclick="logout()">Logout</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 style="margin: 0 0 6px; letter-spacing: -1px;">Run a Scan</h1>
+    <p style="margin: 0 0 24px; color: var(--muted);">
+      Capture a screenshot, compare it with a baseline, and get AI insights.
+    </p>
+
+    <section class="card" style="margin-bottom: 22px;">
+      <h2>Scan Configuration</h2>
+      <form id="scan-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="scan-website">Website</label>
+            <select id="scan-website" required></select>
+          </div>
+          <div class="form-group">
+            <label for="scan-width">Viewport Width</label>
+            <input type="number" id="scan-width" value="1366" min="320" max="3840" required />
+          </div>
+          <div class="form-group">
+            <label for="scan-height">Viewport Height</label>
+            <input type="number" id="scan-height" value="768" min="240" max="2160" required />
+          </div>
+          <div class="form-group">
+            <label for="scan-browser">Browser</label>
+            <select id="scan-browser">
+              <option value="chromium">Chromium</option>
+              <option value="firefox">Firefox</option>
+              <option value="webkit">WebKit</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" id="scan-btn">Start Scan</button>
+      </form>
+    </section>
+
+    <section class="card" id="scan-result" hidden>
+      <h2>Scan Result</h2>
+      <p id="scan-meta" style="color: var(--muted); font-size: 13px;"></p>
+
+      <div class="compare-grid">
+        <div class="compare-card">
+          <header>Reference (Baseline)</header>
+          <img id="ref-img" alt="Reference screenshot" />
+        </div>
+        <div class="compare-card">
+          <header>Actual (Current)</header>
+          <img id="act-img" alt="Actual screenshot" />
+        </div>
+        <div class="compare-card">
+          <header>Difference</header>
+          <img id="diff-img" alt="Difference screenshot" />
+        </div>
+      </div>
+
+      <h3 style="margin-top: 22px;">Detected Issues</h3>
+      <div id="scan-bugs" class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Severity</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody id="scan-bugs-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/scan.js"></script>
+</body>
+</html>
